@@ -47,8 +47,8 @@ app.use(cookieParser());
 app.use(userRoute);
 app.use(mailRoute);
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + 'index.html'));
+  res.sendFile(path.join(__dirname + '/src/pages/index.html'));
 });
 app.get('/*', (req, res) => {
-  res.status(400).sendFile(path.join(__dirname + '404.html'))
+  res.status(400).sendFile(path.join(__dirname + '/src/pages/404.html'))
 })
