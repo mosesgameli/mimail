@@ -4,6 +4,7 @@ const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+const path = require('path')
 const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
@@ -46,5 +47,8 @@ app.use(cookieParser());
 app.use(userRoute);
 app.use(mailRoute);
 app.get("/", (req, res) => {
-  res.send("<h1> Hello Moses! </h1>");
+  res.sendFile(path.join(__dirname + 'index.html'));
 });
+app.get('/*', (req, res) => {
+  res.status(400).sendFile(path.join(__dirname + '404.html'))
+})

@@ -1,0 +1,140 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiMail Server</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        code {
+            background-color: #eee;
+            border-radius: 3px;
+            padding: 0 3px;
+            text-align: left;
+        }
+
+        body {
+            background-color: rgb(192, 208, 233);
+            padding: 10% 5%;
+        }
+
+        main {
+            max-width: 700px;
+            margin: auto;
+            background-color: whitesmoke;
+            text-align: center;
+        }
+
+        a {
+            color: #ffeb3b;
+        }
+
+        .title {
+            box-shadow: 10px 10px 50px silver, 3px 3px 5px silver;
+            background-color: cornflowerblue;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+
+        .content {
+            padding: 0 10px;
+        }
+
+        .route {
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            background-color: cornflowerblue;
+            width: fit-content;
+            padding: 3px 5px;
+            color: whitesmoke;
+        }
+
+        .log {
+            max-width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="title">
+            <h1>MiMail Server</h1>
+            <p>Collab on <a href="https://github.com/moses-20/mimail.git" noreferer=true>Github</a></p>
+        </div>
+        <div class="content">
+            <ul>
+                <li>
+                    <div class="route">
+                        <h4>/signup: post</h4>
+                        <code class="log">
+                            {
+                                "username": "shazzar",
+                                "password": "p@$$w0rD"
+                            }
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <div class="route">
+                        <h4>/login: post</h4>
+                        <code class="log">
+                            {
+                                "username": "shazzar",
+                                "password": "p@$$w0rD"
+                            }
+                        </code>
+                    </div>
+                </li>
+                <li>
+                    <div class="route">
+                        <h4>/mail: post</h4>
+                        <code>
+                            {
+                            "sender": "shazzar",
+                            "recipient": "forths",
+                            "title": "it's a beautiful day",
+                            "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                            }
+                        </code>
+                    </div>
+
+                    <div class="route">
+                        <h4>/mail: get</h4>
+
+                        <code>
+                            {
+                            "sender": "forths",
+                            "type": "inbox"
+                            }
+                        </code>
+                    </div>
+
+                    <div class="route">
+                        <h4>/mail: patch</h4>
+
+                        <code>
+                            {
+                            "sender": "forths",
+                            "state": "true",
+                            "id": "6938naljf71nla889inc9"
+                            }
+                        </code>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html>
